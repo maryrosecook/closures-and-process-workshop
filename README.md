@@ -79,7 +79,7 @@ We'll come back together, collect some of our log entries on the board and discu
 var variableA = 0;
 
 function functionA() {
-  // Can I use variableA on this line? Why?
+  // Can I access variableA on this line? For example, can I console.log it? Why?
 };
 
 functionA();
@@ -94,7 +94,7 @@ function functionA() {
 
 functionA();
 
-// Can I use variableA on this line? Why?
+// Can I access variableA on this line? For example, can I console.log it? Why?
 ```
 
 ### Code sample 3
