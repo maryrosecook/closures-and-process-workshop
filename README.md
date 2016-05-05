@@ -1,8 +1,10 @@
-# Deepen your understanding of closures, and improve your process for understanding code
+# Improve your process for understanding code by deepening your understanding of closures in JavaScript
 
-## Outline
+In this workshop, you'll reflect on the process you use to understand a piece of code.  As a vehicle for this reflection, you'll work on deconstructing and understanding some examples of JavaScript closures.
 
-### Setup (5 mins)
+## Workshop structure
+
+### Preparation (5 mins)
 
 * If you haven't got node installed, run `brew install node`.
 
@@ -20,12 +22,7 @@ console.log("hello!");
 
 ### Demo (15 mins)
 
-I'll take the code sample below and demonstrate my process of trying to answer the question in the comment.  I'll keep a written log.  Each log entry will have this format:
-
-```
-* What I did:
-* Why:
-```
+I'll examine code sample below and try to answer the question in the comment.  I'll keep a written log of everything I think and do.
 
 My demo code sample:
 
@@ -44,20 +41,17 @@ console.log(bar());
 
 ### Workshop (30 mins)
 
+* Everyone bring your laptops.
+
 * Split into pairs.  One person is the investigator, the other is the observer.
 
 * The investigator pastes Code Sample 1 (below) into `investigate.js`.  They try to answer the question in the comment.  They investigate by changing and running the code sample.
 
 * The investigator spikes their investigation.  No TDD: we want a fast process for trying out ideas.
 
-* As the investigator investigates, they keep a detailed written log.  Each log entry has this format:
+* As the investigator investigates, they keep a written log of what they did and why. This can be an unstructured "thought soup".  The more detail the better.  (It's OK if the logging feels like it makes it harder to think!)
 
-```
-What I did:
-Why:
-```
-
-* The observer doesn't join in with the investigation.  But If they don't understand what the investigator is doing or why they are doing something, they ask the investigator to write more detailed log entries.
+* The observer doesn't join in with the investigation.  Their laptop is closed.  But If they don't understand what the investigator is doing or why they are doing something, they ask the investigator to write more detailed log entries.
 
 * When the investigator has an answer to the question in the comment, they explain it to the observer.
 
@@ -70,6 +64,12 @@ Why:
 ### Plenary (15 mins)
 
 We'll come back together, collect some of our log entries on the board and discuss the successful and less successful processes we use to understand code.
+
+### After the workshop
+
+* Try using the logging technique for your next debugging session.
+
+* To understand more about closures, work through the rest of the code samples.
 
 ## Code samples
 
