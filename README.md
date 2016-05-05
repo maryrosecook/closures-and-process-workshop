@@ -48,6 +48,8 @@ console.log(bar());
 
 * The investigator pastes Code Sample 1 (below) into `investigate.js`.  They try to answer the question in the comment.  They investigate by changing and running the code sample.
 
+* The investigator spikes their investigation.  No TDD: we want a fast process for trying out ideas.
+
 * As the investigator investigates, they keep a detailed written log.  Each log entry has this format:
 
 ```
