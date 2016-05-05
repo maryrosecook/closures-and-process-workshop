@@ -1,6 +1,8 @@
 # Deepen your understanding of closures, and improve your process for understanding code
 
-## Setup: 5 mins
+## Outline
+
+### Setup (5 mins)
 
 * If you haven't got node installed, run `brew install node`.
 
@@ -16,7 +18,7 @@ console.log("hello!");
 
 * Optional, but recommended.  Move your windows around so you have `log.txt`, `investigate.js` and your terminal on screen at the same time.
 
-## Demo: 15 mins
+### Demo (15 mins)
 
 I'll take the code sample below and demonstrate my process of trying to answer the question in the comment.  I'll keep a written log.  Each log entry will have this format:
 
@@ -40,7 +42,7 @@ function bar() {
 console.log(bar());
 ```
 
-## Workshop: 30 mins
+### Workshop (30 mins)
 
 * Split into pairs.  One person is the investigator, the other is the observer.
 
@@ -63,7 +65,7 @@ Why:
 
 * Save your logs!
 
-## Plenary: 15 mins
+### Plenary (15 mins)
 
 We'll come back together, collect some of our log entries on the board and discuss the successful and less successful processes we use to understand code.
 
