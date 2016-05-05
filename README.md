@@ -20,8 +20,10 @@ console.log("hello!");
 
 I'll take the code sample below and demonstrate my process of trying to answer the question in the comment.  I'll keep a written log.  Each log entry will have this format:
 
+```
 * What I did:
 * Why:
+```
 
 ```
 // What output does this code produce? Why?
@@ -43,9 +45,10 @@ console.log(bar());
 * The investigator pastes Code Sample 1 (below) into `investigate.js`.  They try to answer the question in the comment.  They investigate by writing and running code.
 
 * As the investigator investigates, they keep a written log.  Each log entry has this format:
-
+```
 What I did:
 Why:
+```
 
 * The observer doesn't join in with the investigation.  But If they don't understand what the investigator is doing or why they are doing something, they ask the investigator to write more detailed log entries.
 
