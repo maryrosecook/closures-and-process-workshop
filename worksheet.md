@@ -20,11 +20,11 @@ console.log("hello!");
 
 I'll take the code sample below and demonstrate my process of trying to answer the question in the comment.  I'll keep a written log.  Each log entry will have this format:
 
-* What I will do:
+* What I did:
 * Why:
 
 ```
-// What output does this code produce and why?
+// What output does this code produce? Why?
 
 function bar() {
   return foo;
@@ -38,20 +38,20 @@ console.log(bar());
 
 ## Workshop: 30 mins
 
-* Split into pairs.  One person is the scientist, the other is the observer.
+* Split into pairs.  One person is the investigator, the other is the observer.
 
-* The scientist pastes Code Sample 1 (below) into `investigate.js`.  They try to answer the question in the comment.  They investigate by writing and running code.
+* The investigator pastes Code Sample 1 (below) into `investigate.js`.  They try to answer the question in the comment.  They investigate by writing and running code.
 
-* As the scientist investigates, they keep a written log.  Each log entry has this format:
+* As the investigator investigates, they keep a written log.  Each log entry has this format:
 
-What I will do:
+What I did:
 Why:
 
-* The observer doesn't join in with the investigation.  But If they don't understand what the scientist is doing or why they are doing something, they ask the scientist to write more detailed log entries.
+* The observer doesn't join in with the investigation.  But If they don't understand what the investigator is doing or why they are doing something, they ask the investigator to write more detailed log entries.
 
-* When the scientist has an answer to the question in the comment, they explain it to the observer.
+* When the investigator has an answer to the question in the comment, they explain it to the observer.
 
-* If the observer isn't satisfied with the answer, they explain why and the scientist continues investigating.
+* If the observer isn't satisfied with the answer, they explain why and the investigator continues investigating.
 
 * Once the investigation is over, the pair swap roles and move onto the next code sample.
 
@@ -59,7 +59,7 @@ Why:
 
 ## Plenary: 15 mins
 
-We'll come back together, collect some of our log entries on the board and discuss the good and less good parts of the processes we use to understand code.
+We'll come back together, collect some of our log entries on the board and discuss the successful and less successful processes we use to understand code.
 
 ## Code samples
 
@@ -117,24 +117,103 @@ functionA(2);
 
 ### Code sample 5
 
+```js
+var variableA = 1;
 
-### Last code sample
+function functionA() {
+  var variableA = 2;
+};
 
+functionA(2);
+
+// What value does variableA have here? Why?
 ```
+
+### Code sample 6
+
+```js
+var variableA = 1;
+
+if (true) {
+  var variableA = 2;
+}
+
+// What value does variableA have here? Why?
+```
+
+### Code sample 7
+
+```js
+// What is printed when you run this code? Why?
+
+var http = require("http");
+
+function makeRequest() {
+  var host = "google.com";
+
+  http.get({ host: host }, function() {
+    console.log("Successful request to " + host);
+  });
+};
+
+makeRequest();
+```
+
+### Code sample 8
+
+```js
+// What is printed when you run this code? Why?
+
+var http = require("http");
+
+function makeRequest() {
+  var host = "google.com";
+
+  http.get({ host: host }, function() {
+    console.log("Successful request to " + host);
+  });
+
+  host = "somewhere else!";
+};
+
+makeRequest();
+```
+
+### Code sample 9
+
+```js
+// What value does `host` have when all the GET requests have finished?
+
+var http = require("http");
+
+function makeRequest() {
+  var host = "google.com";
+
+  http.get({ host: host }, function() {
+    host = "one thing";
+  });
+
+  http.get({ host: host }, function() {
+    host = "another thing";
+  });
+};
+
+makeRequest();
+```
+
+### Code sample 10
+
+```js
+// WTF?
+
 var http = require('http');
 
-var urls = ["google.com",
-            "blah.doesntexist"];
+var urls = ["google.com"];
 
 function makeRequests() {
-  var errors = 0;
-
   for (var i = 0; i < urls.length; i++) {
-    http.get({ host: urls[i] }, function(resp){
+    http.get({ host: urls[i] }, function() {
       console.log("Successful request to " + urls[i]);
-    }).on("error", function(e){
-      errors = errors + 1;
-      console.log("Failed request to " + urls[i]);
     });
   }
 };

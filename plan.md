@@ -43,5 +43,6 @@
   * closed over variables can change in unexpected ways
     * var changed after closure created
     * several closures using same outer scope
+    * if
     * loops (eg of foreach where you want it and looping over a callback where you may not)
   * global vs closed over variable (maybe skip this - hard to get definitive answer on how this is really implemented)
