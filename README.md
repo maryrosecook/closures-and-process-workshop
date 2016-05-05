@@ -25,6 +25,8 @@ I'll take the code sample below and demonstrate my process of trying to answer t
 * Why:
 ```
 
+My demo code sample:
+
 ```
 // What output does this code produce? Why?
 
@@ -42,9 +44,10 @@ console.log(bar());
 
 * Split into pairs.  One person is the investigator, the other is the observer.
 
-* The investigator pastes Code Sample 1 (below) into `investigate.js`.  They try to answer the question in the comment.  They investigate by writing and running code.
+* The investigator pastes Code Sample 1 (below) into `investigate.js`.  They try to answer the question in the comment.  They investigate by changing and running the code sample.
 
-* As the investigator investigates, they keep a written log.  Each log entry has this format:
+* As the investigator investigates, they keep a detailed written log.  Each log entry has this format:
+
 ```
 What I did:
 Why:
@@ -54,11 +57,11 @@ Why:
 
 * When the investigator has an answer to the question in the comment, they explain it to the observer.
 
-* If the observer isn't satisfied with the answer, they explain why and the investigator continues investigating.
-
 * Once the investigation is over, the pair swap roles and move onto the next code sample.
 
 * Do the code samples in order.  They build on each other. It's fine not to make it through all of them.
+
+* Save your logs!
 
 ## Plenary: 15 mins
 
@@ -72,7 +75,7 @@ We'll come back together, collect some of our log entries on the board and discu
 var variableA = 0;
 
 function functionA() {
-  // Can I use variableA here? Why?
+  // Can I use variableA on this line? Why?
 };
 
 functionA();
@@ -87,7 +90,7 @@ function functionA() {
 
 functionA();
 
-// Can I use variableA here? Why?
+// Can I use variableA on this line? Why?
 ```
 
 ### Code sample 3
@@ -98,12 +101,12 @@ var variableA = 1;
 function functionA() {
   variableA = 2;
 
-  // What value does variableA have here? Why?
+  // What value does variableA have on this line? Why?
 };
 
-// What value does variableA have here? Why?
-
 functionA();
+
+// What value does variableA have on this line? Why?
 ```
 
 ### Code sample 4
@@ -112,7 +115,7 @@ functionA();
 var variableA = 1;
 
 function functionA(variableA) {
-  // What value does variableA have here? Why?
+  // What value does variableA have on this line? Why?
 };
 
 functionA(2);
@@ -127,9 +130,9 @@ function functionA() {
   var variableA = 2;
 };
 
-functionA(2);
+functionA();
 
-// What value does variableA have here? Why?
+// What value does variableA have on this line? Why?
 ```
 
 ### Code sample 6
@@ -141,7 +144,7 @@ if (true) {
   var variableA = 2;
 }
 
-// What value does variableA have here? Why?
+// What value does variableA have on this line? Why?
 ```
 
 ### Code sample 7
@@ -149,20 +152,40 @@ if (true) {
 ```js
 // What is printed when you run this code? Why?
 
-var http = require("http");
+function makeAddingFunction(numberToAdd) {
+  function addingFunction(numberToAddTo) {
+    return numberToAdd + numberToAddTo;
+  };
 
-function makeRequest() {
-  var host = "google.com";
-
-  http.get({ host: host }, function() {
-    console.log("Successful request to " + host);
-  });
+  return addingFunction;
 };
 
-makeRequest();
+var add4 = makeAddingFunction(4);
+
+console.log(add4(10));
 ```
 
 ### Code sample 8
+
+```js
+// What is printed when you run this code? Why?
+
+function makeAddingFunction(numberToAdd) {
+  function addingFunction(numberToAddTo) {
+    return numberToAdd + numberToAddTo;
+  };
+
+  numberToAdd = 6;
+
+  return addingFunction;
+};
+
+var add4 = makeAddingFunction(4);
+
+console.log(add4(10));
+```
+
+### Code sample 9
 
 ```js
 // What is printed when you run this code? Why?
@@ -182,28 +205,6 @@ function makeRequest() {
 makeRequest();
 ```
 
-### Code sample 9
-
-```js
-// What value does `host` have when all the GET requests have finished?
-
-var http = require("http");
-
-function makeRequest() {
-  var host = "google.com";
-
-  http.get({ host: host }, function() {
-    host = "one thing";
-  });
-
-  http.get({ host: host }, function() {
-    host = "another thing";
-  });
-};
-
-makeRequest();
-```
-
 ### Code sample 10
 
 ```js
@@ -211,14 +212,34 @@ makeRequest();
 
 var http = require('http');
 
-var urls = ["google.com"];
-
 function makeRequests() {
+  var urls = ["google.com"];
+
   for (var i = 0; i < urls.length; i++) {
     http.get({ host: urls[i] }, function() {
       console.log("Successful request to " + urls[i]);
     });
   }
+};
+
+makeRequests();
+```
+
+### Code sample 11
+
+```js
+// What is printed when you run this code? Why?
+
+var http = require('http');
+
+function makeRequests() {
+  var urls = ["google.com"];
+
+  urls.forEach(function(url) {
+    http.get({ host: url }, function() {
+      console.log("Successful request to " + url);
+    });
+  });
 };
 
 makeRequests();
